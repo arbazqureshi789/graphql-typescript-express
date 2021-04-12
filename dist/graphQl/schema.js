@@ -10,13 +10,11 @@ exports.querySchema = graphql_1.buildSchema(`
         email: String!
     }
 
-
     type rootQueries{
         register(name: String!, email:String!, password: String!):RegisteredUser!
         login(email: String! , password: String!): Boolean!
-        getUser(): RegisteredUser!
+        getUser: RegisteredUser!
     }
-    
     
     schema {
         query: rootQueries
