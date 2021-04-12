@@ -1,7 +1,7 @@
 import express,{Request , Response} from 'express';
-import {buildSchema,GraphQLSchema} from 'graphql';
+import {buildSchema} from 'graphql';
 
-export const querySchema: GraphQLSchema = buildSchema(`
+export const querySchema = buildSchema(`
 
     type RegisteredUser{
         id: String!
@@ -17,8 +17,8 @@ export const querySchema: GraphQLSchema = buildSchema(`
     }
     
     
-    schema:{
-        query: rootQueries;
+    schema {
+        query: rootQueries
     }
 
 `);

@@ -18,8 +18,8 @@ exports.querySchema = graphql_1.buildSchema(`
     }
     
     
-    schema:{
-        query: rootQueries;
+    schema {
+        query: rootQueries
     }
 
 `);
