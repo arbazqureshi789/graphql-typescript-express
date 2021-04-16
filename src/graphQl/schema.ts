@@ -7,6 +7,7 @@ export const querySchema = buildSchema(`
         id: String!
         name: String!
         email: String!
+        password: String!
     }
 
     type rootQueries{

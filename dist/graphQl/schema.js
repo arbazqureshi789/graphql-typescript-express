@@ -8,6 +8,7 @@ exports.querySchema = graphql_1.buildSchema(`
         id: String!
         name: String!
         email: String!
+        password: String!
     }
 
     type rootQueries{
