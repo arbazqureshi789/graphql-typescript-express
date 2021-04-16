@@ -7,8 +7,8 @@ class DbOperations {
     constructor() {
         this.userRepository = typeorm_1.getRepository(User_1.User);
     }
-    async getAllUser() {
-        const getUsers = await this.userRepository.find();
+    getAllUser() {
+        const getUsers = this.userRepository.find();
         return getUsers;
     }
 }

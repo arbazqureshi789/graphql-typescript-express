@@ -7,8 +7,8 @@ export class DbOperations {
 
     private userRepository = getRepository(User);
 
-    async getAllUser() {
-        const getUsers = await this.userRepository.find();
+    getAllUser() {
+        const getUsers =  this.userRepository.find();
         return getUsers;
     }
 
