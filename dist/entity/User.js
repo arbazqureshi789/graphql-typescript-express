@@ -37,7 +37,7 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
-    class_validator_1.Length(8, 18),
+    class_validator_1.Length(60, 84),
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], User.prototype, "password", void 0);

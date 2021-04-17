@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.queryResolver = void 0;
 const connection_1 = require("../migration/connection");
+// import { resolve } from 'node:path';
 exports.queryResolver = {
     async register({ name, email, password }, context) {
         const db = new connection_1.DbOperations();

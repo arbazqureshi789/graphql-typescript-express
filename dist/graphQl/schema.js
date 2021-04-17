@@ -23,3 +23,7 @@ exports.querySchema = graphql_1.buildSchema(`
     }
 
 `);
+//todos
+// 1 -> hash password -> done
+// 2 -> working on error mesages in graphQl
+// 3 -> email schedular

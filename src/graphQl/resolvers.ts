@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid';
 import { getRepository } from "typeorm";
 import { DbOperations } from '../migration/connection';
 import { User } from '../entity/User';
-import { resolve } from 'node:path';
+// import { resolve } from 'node:path';
 
 export const queryResolver = {
     async register({ name, email, password }: {
@@ -19,7 +19,7 @@ export const queryResolver = {
         const userExist = await db.login(email, password);
         return userExist;
     },
-    
+
     async getAllUser() {
         const db = new DbOperations();
         const users = await db.getAllUser();
