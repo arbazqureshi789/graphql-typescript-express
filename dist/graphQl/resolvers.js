@@ -1,29 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.queryResolver = void 0;
-const uuid_1 = require("uuid");
 const connection_1 = require("../migration/connection");
 exports.queryResolver = {
-    register({ name, email, password }, context) {
-        return {
-            id: uuid_1.v4(),
-            name: "Arbaz Qureshi",
-            email: "arbaz.qureshi@gmail.com"
-        };
+    async register({ name, email, password }, context) {
+        const db = new connection_1.DbOperations();
+        const register = await db.register(name, email, password);
+        return register;
     },
-    login({ email, password }) {
-        return true;
+    async login({ email, password }) {
+        const db = new connection_1.DbOperations();
+        const userExist = await db.login(email, password);
+        return userExist;
     },
-    async getUser() {
+    async getAllUser() {
         const db = new connection_1.DbOperations();
         const users = await db.getAllUser();
-        return {
-            id: users[0].id,
-            name: users[0].name,
-            email: users[0].email,
-            password: users[0].password
-        };
-    }
+        return users;
+        // return {
+        // id: users[1].id,
+        // name: users[1].name,
+        // email: users[1].email,
+        // password: users[1].password
+        // };
+    },
     // async getUser() {
     //     const userRepository = getRepository(User);
     //     const getUsers = await userRepository.find();
@@ -35,4 +35,9 @@ exports.queryResolver = {
     //         password: getUsers[0].password
     //     };
     // }
+    async getUserByEmail({ email }) {
+        const db = new connection_1.DbOperations();
+        const user = await db.getUserByEmail(email);
+        return user;
+    }
 };

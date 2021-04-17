@@ -13,7 +13,8 @@ export const querySchema = buildSchema(`
     type rootQueries{
         register(name: String!, email:String!, password: String!):RegisteredUser!
         login(email: String! , password: String!): Boolean!
-        getUser: RegisteredUser!
+        getAllUser: [RegisteredUser]!
+        getUserByEmail(email: String!): RegisteredUser!
     }
     
     schema {

@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import { IsEmail, Min } from 'class-validator';
+import { IsEmail,Length} from 'class-validator';
 import { v4 as uuid } from 'uuid';
 
 @Entity({ name: "users" })
@@ -17,7 +17,7 @@ export class User {
     @Column()
     email: string;
 
-    @Min(8)
+    @Length(8, 18)
     @Column()
     password: string;
 
